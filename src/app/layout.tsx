@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "@maptiler/sdk/dist/maptiler-sdk.css";
+// import * as maptilersdk from '@maptiler/sdk';
+// maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY as string;
 
 const inter = Inter({ subsets: ["latin"] });
 
