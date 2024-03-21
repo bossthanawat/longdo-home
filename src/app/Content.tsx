@@ -5,16 +5,15 @@ import ToolbarFilter from "./ToolbarFilter";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
+import { useFormState } from "react-dom";
+import { getResidental } from "./action";
 
 type ContentProps = {
   raw: RawResidential[];
 };
 const Content = (props: ContentProps) => {
   const { raw } = props;
-  const searchParams = useSearchParams();
-  const price = searchParams.get("price");
-  const minYear = Number(searchParams.get("minYear") || 2020);
-  const maxYear = Number(searchParams.get("maxYear") || dayjs().year());
+
   const Map = useMemo(
     () =>
       dynamic(() => import("./Map"), {
@@ -23,26 +22,27 @@ const Content = (props: ContentProps) => {
       }),
     []
   );
-  const result = useMemo(() => raw?.filter(
-    (item) =>
-      item.province_id === "3781" &&
-      item?.price_min &&
-      item?.price_min > Number(price || 0) &&
-      dayjs(item.date_created).year() > +minYear &&
-      dayjs(item.date_created).year() < +maxYear
-  ), [maxYear, minYear, price, raw])
+
+  const [state, formAction] = useFormState(getResidental, raw);
 
   return (
     <>
-      <ToolbarFilter />
+      <form action={formAction}>
+        <ToolbarFilter />
+      </form>
       <div className="w-full h-[500px] mt-6">
-        <Map
-          listMarker={result.map((e) => ({
-            id: e.row_number,
-            position: [e.latitude, e.longitude],
-            price: e.price_min || 0,
-          }))}
-        />
+        <div className="flex justify-end">
+          <span className="text-end text-sm text-gray-500">
+            show max 1,000 record
+          </span>
+        </div>
+        {/* <Map
+            listMarker={state.map((e) => ({
+              id: e.row_number,
+              position: [e.latitude, e.longitude],
+              price: e.price_min || 0,
+            }))}
+          /> */}
       </div>
     </>
   );
