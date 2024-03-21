@@ -21,13 +21,13 @@ export default async function Home(context: any) {
   //   []
   // );
   const data = await getData();
-  // const result = data?.filter(
-  //   (item) =>
-  //     item.province_id === "3781" &&
-  //     dayjs(item.date_created).year() > 2020 &&
-  //     item?.price_min &&
-  //     item?.price_min > 0
-  // );
+  const result = data?.filter(
+    (item) =>
+      item.province_id === "3781" &&
+      dayjs(item.date_created).year() > 2020 &&
+      item?.price_min &&
+      item?.price_min > 0
+  );
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -42,7 +42,7 @@ export default async function Home(context: any) {
             }))}
           />
         </div> */}
-        <Content raw={data}/>
+        <Content raw={result}/>
       </main>
     </Suspense>
   );
