@@ -6,15 +6,11 @@ export async function getResidental(prevState: any, formData: FormData) {
   const data = raw as RawResidential[];
   const name = formData.get("name");
   const price = formData.get("price.min");
-  // // const minYear = formData.get('year.min') || 2020;
-  // // const maxYear = formData.get('year.max') || dayjs().year();
   const result = data?.filter(
     (item) =>
       item.province_id === "3781" &&
       item?.price_min &&
-      item?.price_min > Number(price || 0)
-    // dayjs(item.date_created).year() >= +minYear &&
-    // dayjs(item.date_created).year() <= +maxYear
+      +item?.price_min > +(price || 0)
   );
 
   if (result?.length > 200) {
