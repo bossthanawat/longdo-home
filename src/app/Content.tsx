@@ -7,6 +7,8 @@ import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
 import { getResidental } from "./action";
+import { useForm } from "react-hook-form";
+import { Form } from "@/components/ui/form";
 
 type ContentProps = {
   raw: RawResidential[];
@@ -22,14 +24,22 @@ const Content = (props: ContentProps) => {
       }),
     []
   );
-
-  const [state, formAction] = useFormState(getResidental, raw);
-
+  const form = useForm({
+    defaultValues: {
+      price: {
+        max: 7000000,
+      },
+    },
+  });
+  const [state, formAction] = useFormState(getResidental, { data: raw });
+  console.log(state);
   return (
     <>
-      <form action={formAction}>
-        <ToolbarFilter />
-      </form>
+      <Form {...form}>
+        <form action={formAction}>
+          <ToolbarFilter />
+        </form>
+      </Form>
       <div className="w-full h-[500px] mt-6">
         <div className="flex justify-end">
           <span className="text-end text-sm text-gray-500">
