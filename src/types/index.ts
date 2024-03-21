@@ -3,10 +3,10 @@ type RawResidential = {
   project_id?: string;
   name_en?: string; 
   name_th?: string;
-  propertytype_id?: string;
+  propertytype_id: string;
   propertytype_name_en?: string;
   propertytype_name_th?: string;
-  price_min?: string; 
+  price_min: string; 
   developer_id?: string;
   developer_name_en?: string;
   developer_name_th?: string;

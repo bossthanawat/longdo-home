@@ -1,6 +1,6 @@
 "use server";
 import dayjs from "dayjs";
-import raw from "../converted.json";
+import raw from "../../raw/converted.json";
 
 export async function getResidental(prevState: any, formData: FormData) {
   const data = raw as RawResidential[];

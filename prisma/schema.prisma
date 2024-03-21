@@ -9,19 +9,52 @@ datasource db {
 }
 
 model PropertyType {
-  id      String @id
-  name_en String
-  name_th String
+  id         String       @id
+  name_en    String
+  name_th    String
   residental Residental[]
+
   @@map("property_type")
 }
 
 model Residental {
-  row_number String @id
-  project_id String
-  name_en    String
-  name_th    String
-  property_type PropertyType? @relation(fields: [propertytype_id], references: [id])
-  propertytype_id String?
+  row_number             String        @id
+  project_id             String
+  name_en                String
+  name_th                String
+  property_type          PropertyType? @relation(fields: [propertytype_id], references: [id])
+  propertytype_id        String?
+  price_min              Int
+  developer_id           String?
+  developer_name_th      String?
+  developer_name_en      String?
+  latitude               Float
+  longitude              Float
+  neighborhood_id        String?
+  subdistrict_id         String?
+  district_id            String?
+  province_id            String?
+  zipcode                String?
+  count_elevator         Int?
+  count_elevator_service Int?
+  count_floor            Int?
+  count_parking          Int?
+  count_tower            Int?
+  count_unit             Int?
+  count_unittype         Int?
+  facility_clubhouse     Int?
+  facility_fitness       Int?
+  facility_meeting       Int?
+  facility_park          Int?
+  facility_playground    Int?
+  facility_pool          Int?
+  facility_security      Int?
+  date_created           DateTime?
+  date_finish            DateTime?
+  date_updated           DateTime?
+  url_project            String?
+  createdAt              DateTime      @default(now()) @map(name: "created_at")
+  updatedAt              DateTime      @updatedAt @map(name: "updated_at")
+
   @@map("residental")
 }
