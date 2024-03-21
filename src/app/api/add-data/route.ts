@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-import raw from '../../../../raw/converted.json'
+// import raw from '../../../../raw/converted.json'
  
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

@@ -1,4 +1,4 @@
-import raw from "../../raw/converted.json";
+import raw from "../converted.json";
 import dayjs from "dayjs";
 import { Suspense, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
