@@ -32,7 +32,17 @@ export default async function Home(context: any) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="container mt-7">
-        <Content raw={result.slice(0, 1000)}/>
+        {/* <ToolbarFilter />
+        <div className="w-full h-[500px] mt-6">
+          <Map
+            listMarker={result.map((e) => ({
+              id: e.row_number,
+              position: [e.latitude, e.longitude],
+              price: e.price_min || 0,
+            }))}
+          />
+        </div> */}
+        <Content raw={result}/>
       </main>
     </Suspense>
   );
