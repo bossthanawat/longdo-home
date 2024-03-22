@@ -1,0 +1,695 @@
+[
+  {
+    "row_number": 14,
+    "b_prov_id": 9623,
+    "b_prov_code": 72,
+    "b_prov_name_en": "Suphan Buri",
+    "b_prov_name_th": "สุพรรณบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 52,
+    "b_prov_id": 3431,
+    "b_prov_code": 21,
+    "b_prov_name_en": "Rayong",
+    "b_prov_name_th": "ระยอง",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 16,
+    "b_prov_id": 7969,
+    "b_prov_code": 35,
+    "b_prov_name_en": "Yasothon",
+    "b_prov_name_th": "ยโสธร",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 36,
+    "b_prov_id": 2411,
+    "b_prov_code": 57,
+    "b_prov_name_en": "Chiang Rai",
+    "b_prov_name_th": "เชียงราย",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 61,
+    "b_prov_id": 6661,
+    "b_prov_code": 14,
+    "b_prov_name_en": "Phra Nakhon Si Ayutthaya",
+    "b_prov_name_th": "พระนครศรีอยุธยา",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 66,
+    "b_prov_id": 2616,
+    "b_prov_code": 83,
+    "b_prov_name_en": "Phuket",
+    "b_prov_name_th": "ภูเก็ต",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 24,
+    "b_prov_id": 10352,
+    "b_prov_code": 53,
+    "b_prov_name_en": "Uttaradit",
+    "b_prov_name_th": "อุตรดิตถ์",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 12,
+    "b_prov_id": 7472,
+    "b_prov_code": 54,
+    "b_prov_name_en": "Phrae",
+    "b_prov_name_th": "แพร่",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 6,
+    "b_prov_id": 2857,
+    "b_prov_code": 30,
+    "b_prov_name_en": "Nakhon Ratchasima",
+    "b_prov_name_th": "นครราชสีมา",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 71,
+    "b_prov_id": 3781,
+    "b_prov_code": 10,
+    "b_prov_name_en": "Bangkok",
+    "b_prov_name_th": "กรุงเทพมหานคร",
+    "b_region_code": 1,
+    "b_region_namt": "กรุงเทพมหานคร"
+  },
+  {
+    "row_number": 8,
+    "b_prov_id": 7641,
+    "b_prov_code": 44,
+    "b_prov_name_en": "Maha Sarakham",
+    "b_prov_name_th": "มหาสารคาม",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 21,
+    "b_prov_id": 9528,
+    "b_prov_code": 64,
+    "b_prov_name_en": "Sukhothai",
+    "b_prov_name_th": "สุโขทัย",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 58,
+    "b_prov_id": 5003,
+    "b_prov_code": 92,
+    "b_prov_name_en": "Trang",
+    "b_prov_name_th": "ตรัง",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 28,
+    "b_prov_id": 5147,
+    "b_prov_code": 63,
+    "b_prov_name_en": "Tak",
+    "b_prov_name_th": "ตาก",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 48,
+    "b_prov_id": 8752,
+    "b_prov_code": 33,
+    "b_prov_name_en": "Si Sa Ket",
+    "b_prov_name_th": "ศรีสะเกษ",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 56,
+    "b_prov_id": 9128,
+    "b_prov_code": 90,
+    "b_prov_name_en": "Songkhla",
+    "b_prov_name_th": "สงขลา",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 30,
+    "b_prov_id": 8648,
+    "b_prov_code": 42,
+    "b_prov_name_en": "Loei",
+    "b_prov_name_th": "เลย",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 69,
+    "b_prov_id": 5752,
+    "b_prov_code": 96,
+    "b_prov_name_en": "Narathiwat",
+    "b_prov_name_th": "นราธิวาส",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 23,
+    "b_prov_id": 4067,
+    "b_prov_code": 71,
+    "b_prov_name_en": "Kanchanaburi",
+    "b_prov_name_th": "กาญจนบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 75,
+    "b_prov_id": 9315,
+    "b_prov_code": 75,
+    "b_prov_name_en": "Samut Songkhram",
+    "b_prov_name_th": "สมุทรสงคราม",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 55,
+    "b_prov_id": 4510,
+    "b_prov_code": 24,
+    "b_prov_name_en": "Chachoengsao",
+    "b_prov_name_th": "ฉะเชิงเทรา",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 29,
+    "b_prov_id": 7339,
+    "b_prov_code": 67,
+    "b_prov_name_en": "Phetchabun",
+    "b_prov_name_th": "เพชรบูรณ์",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 22,
+    "b_prov_id": 5851,
+    "b_prov_code": 55,
+    "b_prov_name_en": "Nan",
+    "b_prov_name_th": "น่าน",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 7,
+    "b_prov_id": 8986,
+    "b_prov_code": 47,
+    "b_prov_name_en": "Sakon Nakhon",
+    "b_prov_name_th": "สกลนคร",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 9,
+    "b_prov_id": 9353,
+    "b_prov_code": 19,
+    "b_prov_name_en": "Saraburi",
+    "b_prov_name_th": "สระบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 42,
+    "b_prov_id": 7122,
+    "b_prov_code": 65,
+    "b_prov_name_en": "Phitsanulok",
+    "b_prov_name_th": "พิษณุโลก",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 54,
+    "b_prov_id": 7565,
+    "b_prov_code": 56,
+    "b_prov_name_en": "Phayao",
+    "b_prov_name_th": "พะเยา",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 50,
+    "b_prov_id": 6575,
+    "b_prov_code": 27,
+    "b_prov_name_en": "Sa Kaeo",
+    "b_prov_name_th": "สระแก้ว",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 35,
+    "b_prov_id": 4720,
+    "b_prov_code": 18,
+    "b_prov_name_en": "Chai Nat",
+    "b_prov_name_th": "ชัยนาท",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 49,
+    "b_prov_id": 6307,
+    "b_prov_code": 77,
+    "b_prov_name_en": "Prachuap Khiri Khan",
+    "b_prov_name_th": "ประจวบคีรีขันธ์",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 3,
+    "b_prov_id": 7848,
+    "b_prov_code": 58,
+    "b_prov_name_en": "Mae Hong Son",
+    "b_prov_name_th": "แม่ฮ่องสอน",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 37,
+    "b_prov_id": 5266,
+    "b_prov_code": 48,
+    "b_prov_name_en": "Nakhon Phanom",
+    "b_prov_name_th": "นครพนม",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 72,
+    "b_prov_id": 10207,
+    "b_prov_code": 15,
+    "b_prov_name_en": "Ang Thong",
+    "b_prov_name_th": "อ่างทอง",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 46,
+    "b_prov_id": 8399,
+    "b_prov_code": 16,
+    "b_prov_name_en": "Lop Buri",
+    "b_prov_name_th": "ลพบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 39,
+    "b_prov_id": 4861,
+    "b_prov_code": 36,
+    "b_prov_name_en": "Chaiyaphum",
+    "b_prov_name_th": "ชัยภูมิ",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 60,
+    "b_prov_id": 8534,
+    "b_prov_code": 52,
+    "b_prov_name_en": "Lampang",
+    "b_prov_name_th": "ลำปาง",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 45,
+    "b_prov_id": 10429,
+    "b_prov_code": 61,
+    "b_prov_name_en": "Uthai Thani",
+    "b_prov_name_th": "อุทัยธานี",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 27,
+    "b_prov_id": 6051,
+    "b_prov_code": 31,
+    "b_prov_name_en": "Buri Ram",
+    "b_prov_name_th": "บุรีรัมย์",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 13,
+    "b_prov_id": 8058,
+    "b_prov_code": 45,
+    "b_prov_name_en": "Roi Et",
+    "b_prov_name_th": "ร้อยเอ็ด",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 43,
+    "b_prov_id": 9893,
+    "b_prov_code": 32,
+    "b_prov_name_en": "Surin",
+    "b_prov_name_th": "สุรินทร์",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 53,
+    "b_prov_id": 5989,
+    "b_prov_code": 38,
+    "b_prov_name_en": "Bung Kan",
+    "b_prov_name_th": "บึงกาฬ",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 11,
+    "b_prov_id": 4004,
+    "b_prov_code": 81,
+    "b_prov_name_en": "Krabi",
+    "b_prov_name_th": "กระบี่",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 67,
+    "b_prov_id": 2554,
+    "b_prov_code": 51,
+    "b_prov_name_en": "Lamphun",
+    "b_prov_name_th": "ลำพูน",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 19,
+    "b_prov_id": 3555,
+    "b_prov_code": 74,
+    "b_prov_name_en": "Samut Sakhon",
+    "b_prov_name_th": "สมุทรสาคร",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 62,
+    "b_prov_id": 6444,
+    "b_prov_code": 94,
+    "b_prov_name_en": "Pattani",
+    "b_prov_name_th": "ปัตตานี",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 2,
+    "b_prov_id": 2637,
+    "b_prov_code": 40,
+    "b_prov_name_en": "Khon Kaen",
+    "b_prov_name_th": "ขอนแก่น",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 5,
+    "b_prov_id": 5101,
+    "b_prov_code": 23,
+    "b_prov_name_en": "Trat",
+    "b_prov_name_th": "ตราด",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 26,
+    "b_prov_id": 9742,
+    "b_prov_code": 84,
+    "b_prov_name_en": "Surat Thani",
+    "b_prov_name_th": "สุราษฎร์ธานี",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 76,
+    "b_prov_id": 3498,
+    "b_prov_code": 11,
+    "b_prov_name_en": "Samut Prakan",
+    "b_prov_name_th": "สมุทรปราการ",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 74,
+    "b_prov_id": 9478,
+    "b_prov_code": 17,
+    "b_prov_name_en": "Sing Buri",
+    "b_prov_name_th": "สิงห์บุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 20,
+    "b_prov_id": 6943,
+    "b_prov_code": 93,
+    "b_prov_name_en": "Phatthalung",
+    "b_prov_name_th": "พัทลุง",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 73,
+    "b_prov_id": 3599,
+    "b_prov_code": 13,
+    "b_prov_name_en": "Pathum Thani",
+    "b_prov_name_th": "ปทุมธานี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 38,
+    "b_prov_id": 5377,
+    "b_prov_code": 80,
+    "b_prov_name_en": "Nakhon Si Thammarat",
+    "b_prov_name_th": "นครศรีธรรมราช",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 51,
+    "b_prov_id": 7021,
+    "b_prov_code": 66,
+    "b_prov_name_en": "Phichit",
+    "b_prov_name_th": "พิจิตร",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 63,
+    "b_prov_id": 8285,
+    "b_prov_code": 70,
+    "b_prov_name_en": "Ratchaburi",
+    "b_prov_name_th": "ราชบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 31,
+    "b_prov_id": 3667,
+    "b_prov_code": 73,
+    "b_prov_name_en": "Nakhon Pathom",
+    "b_prov_name_th": "นครปฐม",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 18,
+    "b_prov_id": 5597,
+    "b_prov_code": 60,
+    "b_prov_name_en": "Nakhon Sawan",
+    "b_prov_name_th": "นครสวรรค์",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 1,
+    "b_prov_id": 3195,
+    "b_prov_code": 41,
+    "b_prov_name_en": "Udon Thani",
+    "b_prov_name_th": "อุดรธานี",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 25,
+    "b_prov_id": 4423,
+    "b_prov_code": 22,
+    "b_prov_name_en": "Chanthaburi",
+    "b_prov_name_th": "จันทบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 40,
+    "b_prov_id": 10508,
+    "b_prov_code": 34,
+    "b_prov_name_en": "Ubon Ratchathani",
+    "b_prov_name_th": "อุบลราชธานี",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 64,
+    "b_prov_id": 7226,
+    "b_prov_code": 76,
+    "b_prov_name_en": "Phetchaburi",
+    "b_prov_name_th": "เพชรบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 47,
+    "b_prov_id": 4179,
+    "b_prov_code": 62,
+    "b_prov_name_en": "Kamphaeng Phet",
+    "b_prov_name_th": "กำแพงเพชร",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 17,
+    "b_prov_id": 10288,
+    "b_prov_code": 37,
+    "b_prov_name_en": "Amnat Charoen",
+    "b_prov_name_th": "อำนาจเจริญ",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 70,
+    "b_prov_id": 5220,
+    "b_prov_code": 26,
+    "b_prov_name_en": "Nakhon Nayok",
+    "b_prov_name_th": "นครนายก",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 59,
+    "b_prov_id": 8249,
+    "b_prov_code": 85,
+    "b_prov_name_en": "Ranong",
+    "b_prov_name_th": "ระนอง",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 32,
+    "b_prov_id": 10069,
+    "b_prov_code": 43,
+    "b_prov_name_en": "Nong Khai",
+    "b_prov_name_th": "หนองคาย",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 34,
+    "b_prov_id": 10141,
+    "b_prov_code": 39,
+    "b_prov_name_en": "Nong Bua Lam Phu",
+    "b_prov_name_th": "หนองบัวลำภู",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 33,
+    "b_prov_id": 1005,
+    "b_prov_code": 50,
+    "b_prov_name_en": "Chiang Mai",
+    "b_prov_name_th": "เชียงใหม่",
+    "b_region_code": 3,
+    "b_region_namt": "เหนือ"
+  },
+  {
+    "row_number": 15,
+    "b_prov_id": 6368,
+    "b_prov_code": 25,
+    "b_prov_name_en": "Prachin Buri",
+    "b_prov_name_th": "ปราจีนบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 10,
+    "b_prov_id": 4782,
+    "b_prov_code": 86,
+    "b_prov_name_en": "Chumphon",
+    "b_prov_name_th": "ชุมพร",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 77,
+    "b_prov_id": 3372,
+    "b_prov_code": 12,
+    "b_prov_name_en": "Nonthaburi",
+    "b_prov_name_th": "นนทบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 68,
+    "b_prov_id": 7901,
+    "b_prov_code": 95,
+    "b_prov_name_en": "Yala",
+    "b_prov_name_th": "ยะลา",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 44,
+    "b_prov_id": 6887,
+    "b_prov_code": 82,
+    "b_prov_name_en": "Phangnga",
+    "b_prov_name_th": "พังงา",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 4,
+    "b_prov_id": 4269,
+    "b_prov_code": 46,
+    "b_prov_name_en": "Kalasin",
+    "b_prov_name_th": "กาฬสินธุ์",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  },
+  {
+    "row_number": 41,
+    "b_prov_id": 4616,
+    "b_prov_code": 20,
+    "b_prov_name_en": "Chon Buri",
+    "b_prov_name_th": "ชลบุรี",
+    "b_region_code": 2,
+    "b_region_namt": "กลาง"
+  },
+  {
+    "row_number": 57,
+    "b_prov_id": 9271,
+    "b_prov_code": 91,
+    "b_prov_name_en": "Satun",
+    "b_prov_name_th": "สตูล",
+    "b_region_code": 5,
+    "b_region_namt": "ใต้"
+  },
+  {
+    "row_number": 65,
+    "b_prov_id": 7787,
+    "b_prov_code": 49,
+    "b_prov_name_en": "Mukdahan",
+    "b_prov_name_th": "มุกดาหาร",
+    "b_region_code": 4,
+    "b_region_namt": "ตะวันออกเฉียงเหนือ"
+  }
+]

@@ -34,6 +34,7 @@ model Residental {
   subdistrict_id         String?
   district_id            String?
   province_id            String?
+  province              Province? @relation(fields: [province_id], references: [b_prov_id])
   zipcode                String?
   count_elevator         Int?
   count_elevator_service Int?
@@ -57,4 +58,15 @@ model Residental {
   updatedAt              DateTime      @updatedAt @map(name: "updated_at")
 
   @@map("residental")
+}
+
+model Province {
+  row_number String 
+  b_prov_id String @id
+  b_prov_code String
+  b_prov_name_en String
+  b_prov_name_th String
+  b_region_code String
+  b_region_name_th String
+  residental Residental[]
 }
