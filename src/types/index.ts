@@ -1,6 +1,6 @@
 type RawResidential = {
   row_number: string;
-  project_id?: string;
+  project_id: string;
   name_en?: string; 
   name_th?: string;
   propertytype_id: string;
@@ -46,3 +46,26 @@ type RawResidential = {
   url_project?: string;
   day?: string; 
 };
+
+
+type PropertyTypeValue = {
+  id: string;
+  name_en: string;
+  name_th: string;
+}
+
+type ProvinceValue = {
+  row_number: string;
+  b_prov_id: string;
+  b_prov_code: string;
+  b_prov_name_en: string;
+  b_prov_name_th: string;
+  b_region_code: string;
+  b_region_name_th: string;
+}
+
+
+type ResidentialValue = {
+  property_type: PropertyTypeValue;
+  province: ProvinceValue;
+} & RawResidential

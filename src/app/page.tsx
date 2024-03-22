@@ -6,12 +6,6 @@ import ToolbarFilter from "./ToolbarFilter";
 import Content from "./Content";
 import prisma from "@/lib/prisma";
 
-
-async function getData() {
-  const result = raw as RawResidential[];
-  return result;
-}
-
 export default async function Home(context: any) {
   // const Map = useMemo(
   //   () =>
@@ -29,15 +23,21 @@ export default async function Home(context: any) {
   //     item?.price_min &&
   //     +item?.price_min > 0
   // );
-  // const post = await prisma.residental.findUnique({
-  //   where: {
-  //     row_number: "1"
-  //   },
-  //   include: {
-  //     property_type: true,
-  //     province: true
-  //   },
-  // });
+  const residental = await prisma.residental.findMany({
+    where: {
+      province_id: "3781",
+      date_created: {
+        gt: new Date("2020-01-01")
+      },
+      price_min: {
+        gt: 0,
+      }
+    },
+    include: {
+      property_type: true,
+      province: true
+    },
+  });
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -52,7 +52,7 @@ export default async function Home(context: any) {
             }))}
           />
         </div> */}
-        {/* <Content raw={result}/> */}
+        <Content data={residental as any}/>
       </main>
     </Suspense>
   );

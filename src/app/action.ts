@@ -16,7 +16,5 @@ export async function getResidental(prevState: any, formData: FormData) {
   if (result?.length > 200) {
     return result?.slice(0, 200);
   }
-  return {
-    data: result
-  };
+  return result
 }

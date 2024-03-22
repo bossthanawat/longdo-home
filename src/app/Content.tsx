@@ -11,10 +11,10 @@ import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 
 type ContentProps = {
-  raw: RawResidential[];
+  data: ResidentialValue[];
 };
 const Content = (props: ContentProps) => {
-  const { raw } = props;
+  const { data } = props;
 
   const Map = useMemo(
     () =>
@@ -31,11 +31,11 @@ const Content = (props: ContentProps) => {
       },
     },
   });
-  const [state, formAction] = useFormState(getResidental, { data: raw });
-  console.log(state);
+  // const [state, formAction] = useFormState(getResidental, data);
+
   return (
     <>
-      <Form {...form}>
+      {/* <Form {...form}>
         <form action={formAction}>
           <ToolbarFilter />
         </form>
@@ -46,13 +46,24 @@ const Content = (props: ContentProps) => {
             show max 1,000 record
           </span>
         </div>
-        {/* <Map
+        <Map
             listMarker={state.map((e) => ({
               id: e.row_number,
               position: [e.latitude, e.longitude],
               price: e.price_min || 0,
             }))}
-          /> */}
+          />
+      </div> */}
+      <div className="w-full h-[500px] mt-6">
+        {data && (
+          <Map
+            listMarker={data?.map((e) => ({
+              id: e.row_number,
+              position: [+e.latitude, +e.longitude],
+              price: +e.price_min || 0,
+            }))}
+          />
+        )}
       </div>
     </>
   );
