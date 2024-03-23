@@ -16,16 +16,18 @@ export async function GET(request: Request) {
   try {
     const residental = await prisma.residental.findMany({
       where: {
-        province_id: {
-          in: provinceIds.split(","),
-        },
+        ...(provinceIds && {
+          province_id: {
+            in: provinceIds.split(","),
+          },
+        }),
         date_created: {
           ...(formDateCreate && { gte: new Date(formDateCreate) }),
           ...(toDateCreate && { lte: new Date(toDateCreate) }),
         },
         price_min: {
-          gt: +minPrice,
-          ...(maxPrice && { lt: +maxPrice }),
+          gte: +minPrice,
+          ...(maxPrice && { lte: +maxPrice }),
         },
         ...(propertyTypeIds && {
           property_type_id: {
@@ -48,7 +50,7 @@ export async function GET(request: Request) {
         property_type: true,
         province: true,
       },
-      take: 500,
+      take: 1000,
     });
     return NextResponse.json(residental, { status: 200 });
   } catch (error) {
