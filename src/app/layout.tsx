@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
+import Providers from "./providers";
 // import * as maptilersdk from '@maptiler/sdk';
 // maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY as string;
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

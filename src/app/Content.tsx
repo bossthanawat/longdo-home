@@ -9,12 +9,15 @@ import { useFormState } from "react-dom";
 import { getResidental } from "./action";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
+import { Residental } from "@prisma/client";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 type ContentProps = {
-  data: ResidentialValue[];
+  data: Residental[];
 };
 const Content = (props: ContentProps) => {
-  const { data } = props;
+  const { data: defaultData } = props;
 
   const Map = useMemo(
     () =>
@@ -24,14 +27,24 @@ const Content = (props: ContentProps) => {
       }),
     []
   );
-  const form = useForm({
-    defaultValues: {
-      price: {
-        max: 7000000,
-      },
-    },
-  });
+  // const form = useForm({
+  //   defaultValues: {
+  //     price: {
+  //       max: 7000000,
+  //     },
+  //   },
+  // });
   // const [state, formAction] = useFormState(getResidental, data);
+
+  const { data, refetch } = useQuery({
+    queryKey: ["residental", { provinceIds: "3781", minYear: "2020-01-01" }],
+    queryFn: async () => {
+      const { data } = await axios("/api/residental");
+      return data as Residental[];
+    },
+    initialData: defaultData,
+    enabled: false,
+  });
 
   return (
     <>
@@ -54,6 +67,7 @@ const Content = (props: ContentProps) => {
             }))}
           />
       </div> */}
+      <button onClick={() => refetch()}>Refetch</button>
       <div className="w-full h-[500px] mt-6">
         {data && (
           <Map
