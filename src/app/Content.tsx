@@ -12,6 +12,7 @@ import { Form } from "@/components/ui/form";
 import { Residental } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { useLatLngStore } from "./stores/latlng-store";
 
 type ContentProps = {
   data: Residental[];
@@ -33,25 +34,29 @@ const Content = (props: ContentProps) => {
       }),
     []
   );
-  const [search, setSearch] = useState<FormValues>();
-  const form = useForm<FormValues>({
-    defaultValues: {
-      price: {
-        max: 7000000,
-      },
+  const initialSearch = {
+    price: {
+      min: 0,
+      // max: 7000000,
     },
+  };
+  const [search, setSearch] = useState<FormValues>(initialSearch);
+  const { setLatlng, lat, lng } = useLatLngStore((state) => state);
+  const form = useForm<FormValues>({
+    defaultValues: initialSearch,
   });
   // const [state, formAction] = useFormState(getResidental, data);
 
   const { data, isFetching } = useQuery({
-    queryKey: ["residental", search],
-    queryFn: async ({ queryKey }) => {
-      const [, query] = queryKey;
-      if (typeof query === "string") return [];
+    queryKey: ["residental", search, lat, lng],
+    queryFn: async () => {
+      if (!lat || !lng) return [];
       const { data } = await axios.get("/api/residental", {
         params: {
-          priceMin: query?.price?.min,
-          priceMax: query?.price?.max,
+          priceMin: search?.price?.min,
+          priceMax: search?.price?.max,
+          lat: lat,
+          lng: lng,
         },
       });
       return data as Residental[];
@@ -82,7 +87,7 @@ const Content = (props: ContentProps) => {
           )}
           <div className="flex justify-end">
             <span className="text-end text-sm text-gray-500">
-              {data.length} results found (maximum display limit is 1,000
+              {data.length} results found (maximum display limit is 3,000
               records)
             </span>
           </div>

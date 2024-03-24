@@ -13,16 +13,18 @@ import "leaflet/dist/leaflet.css";
 // import "leaflet-defaulticon-compatibility";
 // import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import { useEffect, useState } from "react";
-import { divIcon } from "leaflet";
+import { Map as LeafletMap, divIcon } from "leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import numeral from "numeral";
 import { fShortenNumber } from "@/utils/formatNumber";
+import { useLatLngStore } from "./stores/latlng-store";
+import { Button } from "@/components/ui/button";
 
-export type listMarkerValue ={
+export type listMarkerValue = {
   id: string;
   position: [number, number];
   price: number;
-}
+};
 
 type MapProps = {
   listMarker?: listMarkerValue[];
@@ -30,6 +32,8 @@ type MapProps = {
 
 const Map = (props: MapProps) => {
   const { listMarker } = props;
+  const [map, setMap] = useState<LeafletMap | null>(null);
+  const { setLatlng } = useLatLngStore((state) => state);
 
   const getColorByPrice = (price: number) => {
     if (price <= 1000000) {
@@ -38,29 +42,39 @@ const Map = (props: MapProps) => {
       return "bg-green-500";
     } else if (price <= 5000000) {
       return "bg-yellow-500";
-    } else if (price <= 10000000){
+    } else if (price <= 10000000) {
       return "bg-orange-500";
     } else {
       return "bg-red-500";
     }
   };
-  
+
+  const getCenter = () => {
+    if (!map) return;
+    const center = map.getCenter();
+    setLatlng({ lat: center.lat, lng: center.lng });
+    map.setView([center.lat, center.lng]);
+    map.setZoom(13);
+  };
+
   return (
     <>
+      {map && <Button onClick={getCenter}>ค้นหาในบริเวณนี้</Button>}
       <MapContainer
         center={[13.8042322, 100.5631207]}
         zoom={12}
         className="w-full h-full"
+        ref={setMap}
       >
         <HandleMap />
         <LayersControl>
-          <LayersControl.BaseLayer checked name="Open Street Map">
+          <LayersControl.BaseLayer name="Open Street Map">
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
           </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer name="Google Map">
+          <LayersControl.BaseLayer checked name="Google Map">
             <TileLayer
               attribution="Google Maps"
               url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
@@ -111,11 +125,13 @@ type HandleMapProps = {};
 
 const HandleMap = (props: HandleMapProps) => {
   const map = useMap();
+  const { setLatlng } = useLatLngStore((state) => state);
   useEffect(() => {
     map.locate().on("locationfound", function (e) {
       map.setView([e.latlng.lat, e.latlng.lng]);
+      setLatlng({ lat: e.latlng.lat, lng: e.latlng.lng });
     });
   }, [map]);
 
-  return <></>;
+  return null;
 };
