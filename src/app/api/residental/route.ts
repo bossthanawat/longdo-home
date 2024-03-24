@@ -13,7 +13,7 @@ export async function GET(request: Request) {
   const propertyTypeIds = searchParams.get("propertyTypeIds") || "";
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
-  const scaleLatLng = Number(searchParams.get("scaleLatLng")) || 0.03;
+  const scaleBounds = Number(searchParams.get("scaleBounds")) || 0.03;
   try {
     const residental = await prisma.residental.findMany({
       where: {
@@ -38,12 +38,12 @@ export async function GET(request: Request) {
         ...(lat &&
           lng && {
             latitude: {
-              gt: +lat - scaleLatLng,
-              lt: +lat + scaleLatLng,
+              gt: +lat - scaleBounds,
+              lt: +lat + scaleBounds,
             },
             longitude: {
-              gt: +lng - scaleLatLng,
-              lt: +lng + scaleLatLng,
+              gt: +lng - scaleBounds,
+              lt: +lng + scaleBounds,
             },
           }),
       },

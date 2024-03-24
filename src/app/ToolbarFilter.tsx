@@ -43,7 +43,7 @@ const ToolbarFilter = (props: ToolbarFilterProps) => {
         </div>
       </div>
       <div className="flex flex-col items-end w-full pt-4">
-        <Button type="submit" disabled={disabledSubmit} variant={"default"}>Search</Button>
+        <Button type="submit" disabled={disabledSubmit} variant={"default"}>Filter</Button>
       </div>
     </div>
   );

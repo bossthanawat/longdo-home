@@ -41,7 +41,7 @@ const Content = (props: ContentProps) => {
     },
   };
   const [search, setSearch] = useState<FormValues>(initialSearch);
-  const { setLatlng, lat, lng } = useLatLngStore((state) => state);
+  const { lat, lng, scaleBounds } = useLatLngStore((state) => state);
   const form = useForm<FormValues>({
     defaultValues: initialSearch,
   });
@@ -57,6 +57,7 @@ const Content = (props: ContentProps) => {
           priceMax: search?.price?.max,
           lat: lat,
           lng: lng,
+          scaleBounds: scaleBounds,
         },
       });
       return data as Residental[];

@@ -6,6 +6,7 @@ import {
   MapContainer,
   Marker,
   Popup,
+  Rectangle,
   TileLayer,
   useMap,
 } from "react-leaflet";
@@ -33,7 +34,7 @@ type MapProps = {
 const Map = (props: MapProps) => {
   const { listMarker } = props;
   const [map, setMap] = useState<LeafletMap | null>(null);
-  const { setLatlng } = useLatLngStore((state) => state);
+  const { setLatlng, lat, lng, scaleBounds } = useLatLngStore((state) => state);
 
   const getColorByPrice = (price: number) => {
     if (price <= 1000000) {
@@ -59,7 +60,9 @@ const Map = (props: MapProps) => {
 
   return (
     <>
-      {map && <Button onClick={getCenter}>ค้นหาในบริเวณนี้</Button>}
+      <Button onClick={getCenter} className="mb-2">
+        ค้นหาในบริเวณนี้
+      </Button>
       <MapContainer
         center={[13.8042322, 100.5631207]}
         zoom={12}
@@ -114,6 +117,16 @@ const Map = (props: MapProps) => {
             })}
           ></Marker>
         ))}
+        <Rectangle
+          bounds={[
+            [lat - scaleBounds, lng - scaleBounds],
+            [lat + scaleBounds, lng + scaleBounds],
+          ]}
+          pathOptions={{
+            color: "#aef0a6",
+            fillColor: "none",
+          }}
+        />
       </MapContainer>
     </>
   );
