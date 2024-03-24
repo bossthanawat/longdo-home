@@ -12,13 +12,14 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { useFormContext } from "react-hook-form";
+import { FormValues } from "./Content";
 
 type ToolbarFilterProps = {
   disabledSubmit?: boolean;
 };
 const ToolbarFilter = (props: ToolbarFilterProps) => {
   const { disabledSubmit } = props;
-  const form = useFormContext();
+  const form = useFormContext<FormValues>();
   return (
     <div className="border [box-shadow:3px_3px_rgb(82_82_82)] rounded-lg overflow-hidden p-2">
       <div className="flex flex-wrap gap-3">
@@ -43,7 +44,9 @@ const ToolbarFilter = (props: ToolbarFilterProps) => {
         </div>
       </div>
       <div className="flex flex-col items-end w-full pt-4">
-        <Button type="submit" disabled={disabledSubmit} variant={"default"}>Filter</Button>
+        <Button type="submit" disabled={disabledSubmit} variant={"default"}>
+          Filter
+        </Button>
       </div>
     </div>
   );

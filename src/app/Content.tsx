@@ -18,11 +18,13 @@ type ContentProps = {
   data: Residental[];
 };
 
-type FormValues = {
+export type FormValues = {
   price?: {
     min?: number;
     max?: number;
   };
+  scaleBounds?: number;
+  propertyType?: string;
 };
 const Content = (props: ContentProps) => {
   const { data: defaultData } = props;
@@ -41,7 +43,9 @@ const Content = (props: ContentProps) => {
     },
   };
   const [search, setSearch] = useState<FormValues>(initialSearch);
-  const { lat, lng, scaleBounds } = useLatLngStore((state) => state);
+  const { lat, lng, scaleBounds, setScaleBounds } = useLatLngStore(
+    (state) => state
+  );
   const form = useForm<FormValues>({
     defaultValues: initialSearch,
   });
@@ -55,6 +59,7 @@ const Content = (props: ContentProps) => {
         params: {
           priceMin: search?.price?.min,
           priceMax: search?.price?.max,
+          propertyTypeIds: search?.propertyType,
           lat: lat,
           lng: lng,
           scaleBounds: scaleBounds,
@@ -68,6 +73,7 @@ const Content = (props: ContentProps) => {
 
   const onSubmit = (data: FormValues) => {
     setSearch(data);
+    data.scaleBounds && setScaleBounds(data.scaleBounds);
   };
 
   return (
