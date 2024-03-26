@@ -20,6 +20,7 @@ import numeral from "numeral";
 import { fShortenNumber } from "@/utils/formatNumber";
 import { useLatLngStore } from "./stores/latlng-store";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export type listMarkerValue = {
   id: string;
@@ -33,7 +34,7 @@ type MapProps = {
 };
 
 const Map = (props: MapProps) => {
-  const { listMarker, scaleBounds } = props;
+  const { listMarker, scaleBounds = 0.03 } = props;
   const [map, setMap] = useState<LeafletMap | null>(null);
   const { setLatlng, lat, lng } = useLatLngStore((state) => state);
 
@@ -61,7 +62,7 @@ const Map = (props: MapProps) => {
 
   return (
     <>
-      <Button onClick={getCenter} className="mb-2" type="submit">
+      <Button onClick={getCenter} className="mb-3" type="submit">
         ค้นหาในบริเวณนี้
       </Button>
       <MapContainer

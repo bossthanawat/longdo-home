@@ -13,6 +13,7 @@ import { Residental } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useLatLngStore } from "./stores/latlng-store";
+import { Card, CardContent } from "@/components/ui/card";
 
 type ContentProps = {
   data: Residental[];
@@ -42,12 +43,10 @@ const Content = (props: ContentProps) => {
       // max: 7000000,
     },
     // propertyType: ["1"],
-    scaleBounds: 0.05
+    scaleBounds: 0.036,
   };
   const [search, setSearch] = useState<FormValues>(initialSearch);
-  const { lat, lng } = useLatLngStore(
-    (state) => state
-  );
+  const { lat, lng } = useLatLngStore((state) => state);
   const form = useForm<FormValues>({
     defaultValues: initialSearch,
   });
@@ -83,23 +82,24 @@ const Content = (props: ContentProps) => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <ToolbarFilter disabledSubmit={isFetching} />
-
-          <div className="w-full h-[500px] mt-6">
-            {data && (
-              <Map
-                listMarker={data?.map((e) => ({
-                  id: e.row_number,
-                  position: [+e.latitude, +e.longitude],
-                  price: +e.price_min || 0,
-                }))}
-                scaleBounds={search?.scaleBounds}
-              />
-            )}
-            <div className="flex justify-end">
-              <span className="text-end text-sm text-gray-500">
-                {data.length} results found (maximum display limit is 3,000
-                records)
-              </span>
+          <div className="grid">
+            <div className="w-full h-[500px] mt-3">
+              {data && (
+                <Map
+                  listMarker={data?.map((e) => ({
+                    id: e.row_number,
+                    position: [+e.latitude, +e.longitude],
+                    price: +e.price_min || 0,
+                  }))}
+                  scaleBounds={search?.scaleBounds}
+                />
+              )}
+              <div className="flex justify-end">
+                <span className="text-end text-sm text-gray-500">
+                  {data.length} results found (maximum display limit is 3,000
+                  records)
+                </span>
+              </div>
             </div>
           </div>
         </form>
