@@ -24,7 +24,7 @@ export type FormValues = {
     max?: number;
   };
   scaleBounds?: number;
-  propertyType?: string;
+  propertyType?: string[];
 };
 const Content = (props: ContentProps) => {
   const { data: defaultData } = props;
@@ -38,12 +38,14 @@ const Content = (props: ContentProps) => {
   );
   const initialSearch = {
     price: {
-      min: 0,
+      // min: 0,
       // max: 7000000,
     },
+    // propertyType: ["1"],
+    scaleBounds: 0.05
   };
   const [search, setSearch] = useState<FormValues>(initialSearch);
-  const { lat, lng, scaleBounds, setScaleBounds } = useLatLngStore(
+  const { lat, lng } = useLatLngStore(
     (state) => state
   );
   const form = useForm<FormValues>({
@@ -57,15 +59,16 @@ const Content = (props: ContentProps) => {
       if (!lat || !lng) return [];
       const { data } = await axios.get("/api/residental", {
         params: {
-          priceMin: search?.price?.min,
+          priceMin: search?.price?.min || 0,
           priceMax: search?.price?.max,
-          propertyTypeIds: search?.propertyType,
+          propertyTypeIds: search?.propertyType || ["1", "2", "3", "20000"],
           lat: lat,
           lng: lng,
-          scaleBounds: scaleBounds,
+          scaleBounds: search?.scaleBounds,
         },
       });
       return data as Residental[];
+      return [];
     },
     initialData: defaultData,
     refetchOnWindowFocus: false,
@@ -73,7 +76,6 @@ const Content = (props: ContentProps) => {
 
   const onSubmit = (data: FormValues) => {
     setSearch(data);
-    data.scaleBounds && setScaleBounds(data.scaleBounds);
   };
 
   return (
@@ -81,24 +83,26 @@ const Content = (props: ContentProps) => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <ToolbarFilter disabledSubmit={isFetching} />
-        </form>
-        <div className="w-full h-[500px] mt-6">
-          {data && (
-            <Map
-              listMarker={data?.map((e) => ({
-                id: e.row_number,
-                position: [+e.latitude, +e.longitude],
-                price: +e.price_min || 0,
-              }))}
-            />
-          )}
-          <div className="flex justify-end">
-            <span className="text-end text-sm text-gray-500">
-              {data.length} results found (maximum display limit is 3,000
-              records)
-            </span>
+
+          <div className="w-full h-[500px] mt-6">
+            {data && (
+              <Map
+                listMarker={data?.map((e) => ({
+                  id: e.row_number,
+                  position: [+e.latitude, +e.longitude],
+                  price: +e.price_min || 0,
+                }))}
+                scaleBounds={search?.scaleBounds}
+              />
+            )}
+            <div className="flex justify-end">
+              <span className="text-end text-sm text-gray-500">
+                {data.length} results found (maximum display limit is 3,000
+                records)
+              </span>
+            </div>
           </div>
-        </div>
+        </form>
       </Form>
     </>
   );

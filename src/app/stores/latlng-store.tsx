@@ -10,18 +10,13 @@ export type LatLngActions = {
   setLatlng: (props: LatLngState) => void;
 };
 
-export type OptionMapState = {
-  scaleBounds: number;
-  setScaleBounds: (props: number) => void;
-};
+export type OptionMapState = {};
 
 export type LatLngStore = LatLngState & LatLngActions & OptionMapState;
 
 const createLatLngStore = createStore<LatLngStore>((set) => ({
   lat: 0,
   lng: 0,
-  scaleBounds: 0.03,
-  setScaleBounds: (props) => set((state) => ({ scaleBounds: props })),
   setLatlng: (props) => set((state) => ({ lat: props.lat, lng: props.lng })),
 }));
 

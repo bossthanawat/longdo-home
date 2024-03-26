@@ -29,12 +29,13 @@ export type listMarkerValue = {
 
 type MapProps = {
   listMarker?: listMarkerValue[];
+  scaleBounds?: number;
 };
 
 const Map = (props: MapProps) => {
-  const { listMarker } = props;
+  const { listMarker, scaleBounds } = props;
   const [map, setMap] = useState<LeafletMap | null>(null);
-  const { setLatlng, lat, lng, scaleBounds } = useLatLngStore((state) => state);
+  const { setLatlng, lat, lng } = useLatLngStore((state) => state);
 
   const getColorByPrice = (price: number) => {
     if (price <= 1000000) {
@@ -60,13 +61,13 @@ const Map = (props: MapProps) => {
 
   return (
     <>
-      <Button onClick={getCenter} className="mb-2">
+      <Button onClick={getCenter} className="mb-2" type="submit">
         ค้นหาในบริเวณนี้
       </Button>
       <MapContainer
         center={[13.8042322, 100.5631207]}
         zoom={12}
-        className="w-full h-full"
+        className="w-full h-full z-0"
         ref={setMap}
       >
         <HandleMap />
@@ -117,16 +118,18 @@ const Map = (props: MapProps) => {
             })}
           ></Marker>
         ))}
-        <Rectangle
-          bounds={[
-            [lat - scaleBounds, lng - scaleBounds],
-            [lat + scaleBounds, lng + scaleBounds],
-          ]}
-          pathOptions={{
-            color: "#aef0a6",
-            fillColor: "none",
-          }}
-        />
+        {scaleBounds && (
+          <Rectangle
+            bounds={[
+              [lat - scaleBounds, lng - scaleBounds],
+              [lat + scaleBounds, lng + scaleBounds],
+            ]}
+            pathOptions={{
+              color: "#aef0a6",
+              fillColor: "none",
+            }}
+          />
+        )}
       </MapContainer>
     </>
   );
