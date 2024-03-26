@@ -47,9 +47,12 @@ export async function GET(request: Request) {
             },
           }),
       },
-      include: {
-        property_type: true,
-        province: true,
+      select:{
+        row_number: true,
+        name_th: true,
+        latitude: true,
+        longitude: true,
+        price_min: true,
       },
       take: 3000,
     });

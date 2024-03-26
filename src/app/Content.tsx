@@ -6,14 +6,16 @@ import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
-import { getResidental } from "./action";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
-import { Residental } from "@prisma/client";
+import { PropertyType, Province, Residental } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useLatLngStore } from "./stores/latlng-store";
 import { Card, CardContent } from "@/components/ui/card";
+import { getResidentalById } from "./action";
+import ResidentalDetail from "./ResidentalDetail";
+import { Separator } from "@/components/ui/separator";
 
 type ContentProps = {
   data: Residental[];
@@ -46,11 +48,11 @@ const Content = (props: ContentProps) => {
     scaleBounds: 0.036,
   };
   const [search, setSearch] = useState<FormValues>(initialSearch);
+  const [residental, setResidental] = useState<any>();
   const { lat, lng } = useLatLngStore((state) => state);
   const form = useForm<FormValues>({
     defaultValues: initialSearch,
   });
-  // const [state, formAction] = useFormState(getResidental, data);
 
   const { data, isFetching } = useQuery({
     queryKey: ["residental", search, lat, lng],
@@ -75,7 +77,15 @@ const Content = (props: ContentProps) => {
 
   const onSubmit = (data: FormValues) => {
     setSearch(data);
+    setResidental(null);
   };
+
+  const onSelected = async (id: string) => {
+    const residental = await getResidentalById(id);
+    residental && setResidental(residental);
+  };
+
+  console.log("data", residental);
 
   return (
     <>
@@ -83,15 +93,17 @@ const Content = (props: ContentProps) => {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <ToolbarFilter disabledSubmit={isFetching} />
           <div className="grid">
-            <div className="w-full h-[500px] mt-3">
+            <div className="w-full h-[400px] mt-3 mb-16">
               {data && (
                 <Map
                   listMarker={data?.map((e) => ({
                     id: e.row_number,
                     position: [+e.latitude, +e.longitude],
                     price: +e.price_min || 0,
+                    name: e.name_th,
                   }))}
                   scaleBounds={search?.scaleBounds}
+                  onClickMarker={onSelected}
                 />
               )}
               <div className="flex justify-end">
@@ -104,6 +116,11 @@ const Content = (props: ContentProps) => {
           </div>
         </form>
       </Form>
+      {residental && (
+        <div className="mt-4">
+          <ResidentalDetail data={residental} />
+        </div>
+      )}
     </>
   );
 };

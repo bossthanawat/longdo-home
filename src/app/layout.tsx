@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import Providers from "./providers";
 // import * as maptilersdk from '@maptiler/sdk';
 // maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY as string;
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Kanit({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

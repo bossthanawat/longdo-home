@@ -26,15 +26,17 @@ export type listMarkerValue = {
   id: string;
   position: [number, number];
   price: number;
+  name: string;
 };
 
 type MapProps = {
   listMarker?: listMarkerValue[];
   scaleBounds?: number;
+  onClickMarker: (id: string) => void;
 };
 
 const Map = (props: MapProps) => {
-  const { listMarker, scaleBounds = 0.03 } = props;
+  const { listMarker, scaleBounds = 0.03, onClickMarker } = props;
   const [map, setMap] = useState<LeafletMap | null>(null);
   const { setLatlng, lat, lng } = useLatLngStore((state) => state);
 
@@ -101,7 +103,7 @@ const Map = (props: MapProps) => {
             position={marker.position}
             eventHandlers={{
               click: (e) => {
-                console.log("marker clicked", marker.id);
+                onClickMarker(marker.id || "");
               },
             }}
             icon={divIcon({
@@ -117,7 +119,9 @@ const Map = (props: MapProps) => {
                 </div>
               ),
             })}
-          ></Marker>
+          >
+            <Popup>{marker.name}</Popup>
+          </Marker>
         ))}
         {scaleBounds && (
           <Rectangle

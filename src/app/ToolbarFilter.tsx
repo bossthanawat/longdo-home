@@ -36,14 +36,14 @@ const ToolbarFilter = (props: ToolbarFilterProps) => {
             control={form.control}
             name="price.min"
             render={({ field }) => (
-              <Input placeholder="ราคาต่ำสุด" {...field} className="h-9" />
+              <Input type="number" placeholder="ราคาต่ำสุด" {...field} className="h-9" />
             )}
           />
           <FormField
             control={form.control}
             name="price.max"
             render={({ field }) => (
-              <Input placeholder="ราคาสูงสุด" {...field} className="h-9" />
+              <Input type="number" placeholder="ราคาสูงสุด" {...field} className="h-9" />
             )}
           />
         </div>
