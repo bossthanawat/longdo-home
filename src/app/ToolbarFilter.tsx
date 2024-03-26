@@ -29,8 +29,8 @@ const ToolbarFilter = (props: ToolbarFilterProps) => {
   const { disabledSubmit } = props;
   const form = useFormContext<FormValues>();
   return (
-    <div className="flex flex-wrap gap-3">
-      <div className="flex flex-col gap-1 max-w-[250px]">
+    <div className="flex flex-wrap gap-3 items-center">
+      <div className="flex flex-col gap-1 max-w-[250px] ">
         <div className="flex gap-2">
           <FormField
             control={form.control}
