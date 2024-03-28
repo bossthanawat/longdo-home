@@ -14,3 +14,12 @@ export async function getResidentalById(id: string) {
   });
   return residental;
 }
+
+export async function getCurrentCityTrainStation() {
+  const cityTrainStation = await prisma.cityTrainStation.findMany({
+    where: {
+      status: "ปัจจุบัน",
+    },
+  });
+  return cityTrainStation;
+}

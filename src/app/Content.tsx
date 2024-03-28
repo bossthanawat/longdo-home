@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useLatLngStore } from "./stores/latlng-store";
 import { Card, CardContent } from "@/components/ui/card";
-import { getResidentalById } from "./action";
+import { getCurrentCityTrainStation, getResidentalById } from "./action";
 import ResidentalDetail from "./ResidentalDetail";
 import { Separator } from "@/components/ui/separator";
 
@@ -72,6 +72,17 @@ const Content = (props: ContentProps) => {
     refetchOnWindowFocus: false,
   });
 
+  const cityTrainStation = useQuery({
+    queryKey: ["cityTrainStation"],
+    queryFn: async () => {
+      const result = await getCurrentCityTrainStation();
+      return result;
+    },
+    initialData: [],
+    refetchOnWindowFocus: false,
+    enabled: false,
+  });
+
   const onSubmit = (data: FormValues) => {
     setSearch(data);
     setResidental(null);
@@ -81,8 +92,6 @@ const Content = (props: ContentProps) => {
     const residental = await getResidentalById(id);
     residental && setResidental(residental);
   };
-
-  console.log("data", residental);
 
   return (
     <>

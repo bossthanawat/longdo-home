@@ -70,3 +70,18 @@ model Province {
   b_region_name_th String
   residental       Residental[]
 }
+
+model CityTrainStation {
+  gid        Int    @id
+  line_no    Int
+  railway    String
+  line_typt  String
+  line_type  String
+  status     String
+  line_th    String
+  line_en    String
+  station_th String
+  station_en String
+  latitude   Float
+  longitude  Float
+}

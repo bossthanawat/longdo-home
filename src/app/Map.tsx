@@ -29,14 +29,28 @@ export type listMarkerValue = {
   name: string;
 };
 
+export type listCityTrainStationValue = {
+  id: string | number;
+  position: [number, number];
+  lineType: string;
+  lineName: string;
+  stationName: string;
+};
+
 type MapProps = {
   listMarker?: listMarkerValue[];
+  listCityTrainStation?: listCityTrainStationValue[];
   scaleBounds?: number;
   onClickMarker: (id: string) => void;
 };
 
 const Map = (props: MapProps) => {
-  const { listMarker, scaleBounds = 0.03, onClickMarker } = props;
+  const {
+    listMarker,
+    scaleBounds = 0.03,
+    onClickMarker,
+    listCityTrainStation = [],
+  } = props;
   const [map, setMap] = useState<LeafletMap | null>(null);
   const { setLatlng, lat, lng } = useLatLngStore((state) => state);
 
