@@ -17,9 +17,7 @@ import { getResidentalById } from "./action";
 import ResidentalDetail from "./ResidentalDetail";
 import { Separator } from "@/components/ui/separator";
 
-type ContentProps = {
-  data: Residental[];
-};
+type ContentProps = {};
 
 export type FormValues = {
   price?: {
@@ -30,7 +28,7 @@ export type FormValues = {
   propertyType?: string[];
 };
 const Content = (props: ContentProps) => {
-  const { data: defaultData } = props;
+  const {} = props;
   const Map = useMemo(
     () =>
       dynamic(() => import("./Map"), {
@@ -69,9 +67,8 @@ const Content = (props: ContentProps) => {
         },
       });
       return data as Residental[];
-      return [];
     },
-    initialData: defaultData,
+    initialData: [],
     refetchOnWindowFocus: false,
   });
 

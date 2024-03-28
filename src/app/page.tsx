@@ -6,7 +6,8 @@ export default async function Home(context: any) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="container mt-7">
-        <Content data={[]}/>
+        <h1 className="text-4xl font-medium mb-4">Long Do Home</h1>
+        <Content />
       </main>
     </Suspense>
   );
