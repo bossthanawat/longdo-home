@@ -3,11 +3,10 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function GET(request: Request) {
-  const raw = require("../../../../../raw/opendata_train_station.json")
-  const result = raw
   try {
+    const raw = require("../../../../../raw/opendata_train_station.json");
     const createdItems = await prisma.cityTrainStation.createMany({
-      data: result.map((item: any) => ({
+      data: raw.map((item: any) => ({
         gid: item.gid,
         latitude: item.latitude,
         longitude: item.longitude,
